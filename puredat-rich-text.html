@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`puredat-rich-text`
+
+
+@demo demo/index.html 
+-->
+
+<dom-module id="puredat-rich-text">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'puredat-rich-text',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'puredat-rich-text',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
