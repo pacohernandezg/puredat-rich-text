@@ -116,8 +116,10 @@
 			},
 			
 			ready: function() {
-				CKEDITOR.config.removePlugins = "about";
-				this._editor = CKEDITOR.appendTo(this.$.container);
+				CKEDITOR.config.removePlugins = "about,maximize,sourcearea";
+				this._editor = CKEDITOR.replace(this.$.container, {
+					language: "es"
+				});
 				this._editor.config.readOnly = this.readOnly;
 				this._editor.setData(this.value);
 			}
