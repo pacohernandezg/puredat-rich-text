@@ -20,10 +20,10 @@
 		</style>
 		
 		<paper-input-container 
-				type="text" 
 				invalid="[[_isInvalid(errorMessage)]]"
 				always-float-label>
 			<label>[[label]]</label>
+			<input is="iron-input" disabled style="display:none"></input>
 			<div id="container"></div>
 			<paper-input-error>[[errorMessage]]</paper-input-error>
 		</paper-input-container>
@@ -34,7 +34,7 @@
 			is: 'puredat-rich-text',
 			
 			properties: {
-				
+
 				/** Editor */
 				_editor: Object,
 				
