@@ -2,8 +2,6 @@
 <link rel="import" href="../paper-input/paper-input.html">
 <script>
 	var CKEDITOR_BASEPATH = "../bower_components/ckeditor/";
-	// Development
-	//var CKEDITOR_BASEPATH = "../../ckeditor/";
 </script>
 <script src="../ckeditor/ckeditor.js"></script>
 <!--
@@ -26,7 +24,7 @@
 				always-float-label>
 			<label>[[label]]</label>
 			<input is="iron-input" disabled style="display:none"></input>
-			<div id="container"></div>
+			<div id="richTextContainer"></div>
 			<paper-input-error>[[errorMessage]]</paper-input-error>
 		</paper-input-container>
 	</template>
@@ -117,7 +115,7 @@
 			
 			ready: function() {
 				CKEDITOR.config.removePlugins = "about,maximize,sourcearea";
-				this._editor = CKEDITOR.replace(this.$.container, {
+				this._editor = CKEDITOR.replace(this.$.richTextContainer, {
 					language: "es"
 				});
 				this._editor.config.readOnly = this.readOnly;
