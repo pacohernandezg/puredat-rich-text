@@ -24,8 +24,10 @@
 				always-float-label>
 			<label>[[label]]</label>
 			<input is="iron-input" disabled style="display:none"></input>
-			<div id="richTextContainer"></div>
-			<paper-input-error>[[errorMessage]]</paper-input-error>
+			<div>
+				<div id="richTextContainer"></div>
+				<paper-input-error>[[errorMessage]]</paper-input-error>
+			</div>
 		</paper-input-container>
 	</template>
 	
@@ -111,6 +113,10 @@
 			
 			getValue: function() {
 				return this._editor.getData();
+			},
+			
+			setValue: function(value) {
+				this._editor.setData(value);
 			},
 			
 			ready: function() {
