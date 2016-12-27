@@ -119,7 +119,9 @@
 			},
 			
 			setValue: function(value) {
-				this._editor.setData(value);
+				if (this._editor != null) {
+					this._editor.setData(value);
+				}
 			},
 			
 			attached: function() {
