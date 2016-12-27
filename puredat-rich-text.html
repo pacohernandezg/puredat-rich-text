@@ -123,15 +123,17 @@
 					var editor = this._editor;
 					setTimeout(function() {
 						editor.setData(value);
-					}, 100);
+					}, 100); // Para que le de tiempo (uff)
 				}
 			},
 			
 			attached: function() {
-				CKEDITOR.config.removePlugins = "about,maximize,sourcearea";
-				this._editor = CKEDITOR.replace(this.$.richTextContainer, {
-					language: "es"
-				});
+				if (this._editor == null) {
+					CKEDITOR.config.removePlugins = "about,maximize,sourcearea";
+					this._editor = CKEDITOR.replace(this.$.richTextContainer, {
+						language: "es"
+					});
+				}
 				this._editor.config.readOnly = this.readOnly;
 				this._editor.setData(this.value);
 			}
